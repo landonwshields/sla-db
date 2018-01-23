@@ -3,10 +3,10 @@ var router = express.Router();
 var queries = require('./db/queries')
 
 
-router.get('/locations', function(req,res,next) {
-  queries.getPlaces()
-  .then((locationData) => {
-    res.json(locationData)
+router.get('/staff', function(req,res,next) {
+  queries.getStaff()
+  .then((staffData) => {
+    res.json(staffData)
   })
 })
 
