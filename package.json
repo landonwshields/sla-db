@@ -1,0 +1,27 @@
+{
+  "name": "sla-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landonwshields/sla-db.git"
+  },
+  "author": "Landon Shields",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/landonwshields/sla-db/issues"
+  },
+  "homepage": "https://github.com/landonwshields/sla-db#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "knex": "^0.14.2",
+    "method-override": "^2.3.10",
+    "pg": "^7.4.1"
+  }
+}
