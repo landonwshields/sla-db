@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const queries = require('./db/queries');
 const methodOverride = require('method-override');
+const cors = require('cors')
 var routes = require('./routes')
 
 // app.set('view engine', 'hbs')
@@ -12,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 app.use(methodOverride("_method"))
 app.use('/api', routes)
+app.use(cors('*'))
+
 
 app.listen(port, (req, res) => {
   console.log(port, 'listening here')
