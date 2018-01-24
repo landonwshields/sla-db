@@ -15,5 +15,11 @@ router.get('/forms', function(req,res,next) {
     res.json(formData)
   })
 })
+router.get('/specials', function(req,res,next) {
+  queries.getSpecials()
+  .then((specialData) => {
+    res.json(specialData)
+  })
+})
 
 module.exports = router

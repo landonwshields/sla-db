@@ -6,9 +6,13 @@ function getStaff() {
 function getForms() {
   return db('forms').select();
 }
+function getSpecials() {
+  return db('specials').select();
+}
 
 
 module.exports = {
   getStaff,
-  getForms
+  getForms,
+  getSpecials
 }
