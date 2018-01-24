@@ -8,7 +8,7 @@
         table.varchar('staffPic')
       })
     ])
-  };
+  }; 
 
   exports.down = function(knex, Promise) {
     return Promise.all([
