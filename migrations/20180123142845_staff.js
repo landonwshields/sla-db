@@ -4,6 +4,7 @@
       knex.schema.createTable('staff', function (table) {
         table.increments().primary
         table.string('staffName')
+        table.text('staffBio')
       })
     ])
   };
