@@ -9,5 +9,11 @@ router.get('/staff', function(req,res,next) {
     res.json(staffData)
   })
 })
+router.get('/forms', function(req,res,next) {
+  queries.getForms()
+  .then((formData) => {
+    res.json(formData)
+  })
+})
 
 module.exports = router
