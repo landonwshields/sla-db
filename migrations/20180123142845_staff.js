@@ -5,6 +5,7 @@
         table.increments().primary
         table.string('staffName')
         table.text('staffBio')
+        table.varchar('staffPic')
       })
     ])
   };
