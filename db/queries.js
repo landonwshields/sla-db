@@ -21,6 +21,9 @@ function getContact() {
 function getPrograms() {
   return db('programs').select();
 }
+function getAbout() {
+  return db('about').select();
+}
 
 
 module.exports = {
@@ -30,5 +33,6 @@ module.exports = {
   getGallery,
   getNews,
   getContact,
-  getPrograms
+  getPrograms,
+  getAbout
 }

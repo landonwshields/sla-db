@@ -45,5 +45,11 @@ router.get('/programs', function(req,res,next) {
     res.json(programsData)
   })
 })
+router.get('/about', function(req,res,next) {
+  queries.getAbout()
+  .then((aboutData) => {
+    res.json(aboutData)
+  })
+})
 
 module.exports = router
