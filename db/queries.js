@@ -15,6 +15,9 @@ function getGallery() {
 function getNews() {
   return db('newsevents').select();
 }
+function getContact() {
+  return db('contact').select();
+}
 
 
 module.exports = {
@@ -22,5 +25,6 @@ module.exports = {
   getForms,
   getSpecials,
   getGallery,
-  getNews
+  getNews,
+  getContact
 }

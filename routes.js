@@ -33,5 +33,11 @@ router.get('/news', function(req,res,next) {
     res.json(newsData)
   })
 })
+router.get('/contact', function(req,res,next) {
+  queries.getContact()
+  .then((contactData) => {
+    res.json(contactData)
+  })
+})
 
 module.exports = router
