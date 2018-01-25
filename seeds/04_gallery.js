@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('gallery').insert([
         {
-          schoolPic: 'public/sla_pic1.webp'
+          schoolPic: './public/sla_pic1.webp'
         },
         {
           schoolPic: 'public/sla_pic2.webp'
