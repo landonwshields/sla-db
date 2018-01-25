@@ -21,5 +21,11 @@ router.get('/specials', function(req,res,next) {
     res.json(specialData)
   })
 })
+router.get('/gallery', function(req,res,next) {
+  queries.getGallery()
+  .then((galleryData) => {
+    res.json(galleryData)
+  })
+})
 
 module.exports = router
