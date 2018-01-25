@@ -27,5 +27,11 @@ router.get('/gallery', function(req,res,next) {
     res.json(galleryData)
   })
 })
+router.get('/news', function(req,res,next) {
+  queries.getNews()
+  .then((newsData) => {
+    res.json(newsData)
+  })
+})
 
 module.exports = router

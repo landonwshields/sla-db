@@ -12,11 +12,15 @@ function getSpecials() {
 function getGallery() {
   return db('gallery').select();
 }
+function getNews() {
+  return db('newsevents').select();
+}
 
 
 module.exports = {
   getStaff,
   getForms,
   getSpecials,
-  getGallery
+  getGallery,
+  getNews
 }
