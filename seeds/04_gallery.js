@@ -6,25 +6,22 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('gallery').insert([
         {
-          schoolPic: './public/sla_pic1.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynl'
         },
         {
-          schoolPic: 'public/sla_pic2.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynm'
         },
         {
-          schoolPic: 'public/sla_pic3.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynm1'
         },
         {
-          schoolPic: 'public/sla_pic4.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynm2'
         },
         {
-          schoolPic: 'public/sla_pic5.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynm3'
         },
         {
-          schoolPic: 'public/sla_pic6.webp'
-        },
-        {
-          schoolPic: 'public/sla_pic7.webp'
+          schoolPic: 'https://www.superiorlearningacademy.com/gallery?lightbox=dataItem-iqvioynn'
         }
       ]);
     });
