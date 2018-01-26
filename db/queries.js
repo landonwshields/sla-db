@@ -32,6 +32,9 @@ function getHome() {
 function addHome(newHomeIntro) {
   return db('home').insert(newHomeIntro);
 }
+function updateHome(id, updatedHome) {
+  return db('home').update(updatedHome).where('id', id);
+}
 
 module.exports = {
   getStaff,
@@ -43,5 +46,6 @@ module.exports = {
   getPrograms,
   getAbout,
   getHome,
-  addHome
+  addHome,
+  updateHome
 }
