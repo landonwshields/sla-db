@@ -72,7 +72,7 @@ router.post('/home', function(req,res,next) {
     res.redirect('/home')
   })
 })
-router.delete('/home', function(req,res,next) {
+router.delete('/home/:id', function(req,res,next) {
   var id = req.params.id
   queries.deleteHome(id)
   .then((deleted) => {
