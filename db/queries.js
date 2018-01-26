@@ -24,11 +24,16 @@ function getPrograms() {
 function getAbout() {
   return db('about').select();
 }
+
+//home queries
 function getHome() {
   return db('home').select();
 }
 function addHome(newHomeIntro) {
   return db('home').insert(newHomeIntro);
+}
+function deleteHome(id){
+  return db('home').where('id', id).del()
 }
 
 
@@ -42,5 +47,6 @@ module.exports = {
   getPrograms,
   getAbout,
   getHome,
-  addHome
+  addHome,
+  deleteHome
 }
