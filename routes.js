@@ -66,16 +66,12 @@ router.get('/home', function(req,res,next) {
     res.json(homeData)
   })
 })
+
 router.post('/home', function(req,res,next) {
+  console.log(req.body);
   queries.addHome(req.body)
   .then((homeData) => {
-    res.redirect('/home')
-  })
-})
-router.delete('/home/:id', function(req,res,next) {
-  var id = req.params.id
-  queries.deleteHome(id)
-  .then((deleted) => {
+    console.log(homeData);
     res.redirect('/home')
   })
 })
