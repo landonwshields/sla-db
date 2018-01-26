@@ -27,6 +27,9 @@ function getAbout() {
 function getHome() {
   return db('home').select();
 }
+function addHome(newHomeIntro) {
+  return db('home').insert(newHomeIntro);
+}
 
 
 module.exports = {
@@ -38,5 +41,6 @@ module.exports = {
   getContact,
   getPrograms,
   getAbout,
-  getHome
+  getHome,
+  addHome
 }
