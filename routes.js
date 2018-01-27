@@ -3,6 +3,29 @@ var router = express.Router();
 var queries = require('./db/queries')
 
 
+//home routes
+router.get('/home', function(req,res,next) {
+  queries.getHome()
+  .then((homeData) => {
+    res.json(homeData)
+  })
+})
+router.post('/home', function(req,res,next) {
+  queries.addHome(req.body)
+  .then((homeData) => {
+    res.redirect('/home')
+  })
+})
+router.put('/home/:id', function(req,res,next) {
+  var id = req.params.id
+  queries.updateHome(id, req.body)
+  .then((homeData) => {
+    res.redirect('/home')
+  })
+})
+
+// Completed all routes ^^^^
+
 router.get('/staff', function(req,res,next) {
   queries.getStaff()
   .then((staffData) => {
@@ -59,27 +82,6 @@ router.get('/about', function(req,res,next) {
   })
 })
 
-//home routes
-router.get('/home', function(req,res,next) {
-  queries.getHome()
-  .then((homeData) => {
-    res.json(homeData)
-  })
-})
-router.post('/home', function(req,res,next) {
-  queries.addHome(req.body)
-  .then((homeData) => {
-    res.redirect('/home')
-  })
-})
-router.put('/home/:id', function(req,res,next) {
-  console.log(req.params.id);
-  var id = req.params.id
-  queries.updateHome(id, req.body)
-  .then((homeData) => {
-    console.log(homeData);
-    res.redirect('/home')
-  })
-})
+
 
 module.exports = router

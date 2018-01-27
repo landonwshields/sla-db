@@ -4,8 +4,6 @@
       knex.schema.createTable('about', function (table) {
         table.increments().primary
         table.text('aboutInfo')
-        table.text('aboutTeachers')
-        table.text('aboutMission')
       })
     ])
   };
