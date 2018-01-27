@@ -75,13 +75,26 @@ router.get('/programs', function(req,res,next) {
   })
 })
 
+//about routes
 router.get('/about', function(req,res,next) {
   queries.getAbout()
   .then((aboutData) => {
     res.json(aboutData)
   })
 })
-
+router.post('/about', function(req,res,next) {
+  queries.addAbout(req.body)
+  .then((aboutData) => {
+    res.redirect('/about')
+  })
+})
+router.put('/about/:id', function(req,res,next) {
+  var id = req.params.id
+  queries.updateAbout(id, req.body)
+  .then((aboutData) => {
+    res.redirect('/about')
+  })
+})
 
 
 module.exports = router

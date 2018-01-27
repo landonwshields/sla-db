@@ -21,8 +21,16 @@ function getContact() {
 function getPrograms() {
   return db('programs').select();
 }
+
+//about queries
 function getAbout() {
   return db('about').select();
+}
+function addAbout(newAbout) {
+  return db('about').insert(newAbout);
+}
+function updateAbout(id, updatedAbout) {
+  return db('about').update(updatedAbout).where('id', id);
 }
 
 //home queries
@@ -45,6 +53,8 @@ module.exports = {
   getContact,
   getPrograms,
   getAbout,
+  addAbout,
+  updateAbout,
   getHome,
   addHome,
   updateHome
