@@ -3,6 +3,7 @@
     return Promise.all([
       knex.schema.createTable('forms', function (table) {
         table.increments().primary
+        table.varchar('formName')
         table.varchar('schoolForm')
       })
     ])
