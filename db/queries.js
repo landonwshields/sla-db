@@ -9,9 +9,6 @@ function getForms() {
 function getSpecials() {
   return db('specials').select();
 }
-function getGallery() {
-  return db('gallery').select();
-}
 function getNews() {
   return db('newsevents').select();
 }
@@ -44,11 +41,21 @@ function updateHome(id, updatedHome) {
   return db('home').update(updatedHome).where('id', id);
 }
 
+//gallery queries
+function getGallery() {
+  return db('gallery').select();
+}
+function addGallery(newSchoolPic) {
+  return db('gallery').insert(newSchoolPic);
+}
+function updateGallery(id, updatedGallery) {
+  return db('gallery').update(updatedGallery).where('id', id);
+}
+
 module.exports = {
   getStaff,
   getForms,
   getSpecials,
-  getGallery,
   getNews,
   getContact,
   getPrograms,
@@ -57,5 +64,8 @@ module.exports = {
   updateAbout,
   getHome,
   addHome,
-  updateHome
+  updateHome,
+  getGallery,
+  addGallery,
+  updateGallery
 }

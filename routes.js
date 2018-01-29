@@ -24,6 +24,27 @@ router.put('/home/:id', function(req,res,next) {
   })
 })
 
+//gallery routes
+router.get('/gallery', function(req,res,next) {
+  queries.getGallery()
+  .then((galleryData) => {
+    res.json(galleryData)
+  })
+})
+router.post('/gallery', function(req,res,next) {
+  queries.addGallery(req.body)
+  .then((galleryData) => {
+    res.redirect('/gallery')
+  })
+})
+router.put('/gallery/:id', function(req,res,next) {
+  var id = req.params.id
+  queries.updateGallery(id, req.body)
+  .then((galleryData) => {
+    res.redirect('/gallery')
+  })
+})
+
 // Completed all routes ^^^^
 
 router.get('/staff', function(req,res,next) {
@@ -44,13 +65,6 @@ router.get('/specials', function(req,res,next) {
   queries.getSpecials()
   .then((specialData) => {
     res.json(specialData)
-  })
-})
-
-router.get('/gallery', function(req,res,next) {
-  queries.getGallery()
-  .then((galleryData) => {
-    res.json(galleryData)
   })
 })
 
