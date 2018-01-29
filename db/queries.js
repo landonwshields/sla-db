@@ -3,9 +3,6 @@ const db = require('./connections')
 function getStaff() {
   return db('staff').select();
 }
-function getForms() {
-  return db('forms').select();
-}
 function getSpecials() {
   return db('specials').select();
 }
@@ -52,9 +49,19 @@ function updateGallery(id, updatedGallery) {
   return db('gallery').update(updatedGallery).where('id', id);
 }
 
+//forms queries
+function getForms() {
+  return db('forms').select();
+}
+function addForm(newForm) {
+  return db('forms').insert(newForm);
+}
+function updateForm(id, updatedForm) {
+  return db('forms').update(updatedForm).where('id', id);
+}
+
 module.exports = {
   getStaff,
-  getForms,
   getSpecials,
   getNews,
   getContact,
@@ -67,5 +74,8 @@ module.exports = {
   updateHome,
   getGallery,
   addGallery,
-  updateGallery
+  updateGallery,
+  getForms,
+  addForm,
+  updateForm
 }

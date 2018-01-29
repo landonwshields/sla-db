@@ -45,19 +45,55 @@ router.put('/gallery/:id', function(req,res,next) {
   })
 })
 
+//about routes
+router.get('/about', function(req,res,next) {
+  queries.getAbout()
+  .then((aboutData) => {
+    res.json(aboutData)
+  })
+})
+router.post('/about', function(req,res,next) {
+  queries.addAbout(req.body)
+  .then((aboutData) => {
+    res.redirect('/about')
+  })
+})
+router.put('/about/:id', function(req,res,next) {
+  var id = req.params.id
+  queries.updateAbout(id, req.body)
+  .then((aboutData) => {
+    res.redirect('/about')
+  })
+})
+
+//forms routes
+router.get('/forms', function(req,res,next) {
+  queries.getForms()
+  .then((formData) => {
+    res.json(formData)
+  })
+})
+router.post('/forms', function(req,res,next) {
+  queries.addForm(req.body)
+  .then((formData) => {
+    res.redirect('/forms')
+  })
+})
+router.put('/forms/:id', function(req,res,next) {
+  var id = req.params.id
+  queries.updateForm(id, req.body)
+  .then((formData) => {
+    res.redirect('/forms')
+  })
+})
+
+
 // Completed all routes ^^^^
 
 router.get('/staff', function(req,res,next) {
   queries.getStaff()
   .then((staffData) => {
     res.json(staffData)
-  })
-})
-
-router.get('/forms', function(req,res,next) {
-  queries.getForms()
-  .then((formData) => {
-    res.json(formData)
   })
 })
 
@@ -86,27 +122,6 @@ router.get('/programs', function(req,res,next) {
   queries.getPrograms()
   .then((programsData) => {
     res.json(programsData)
-  })
-})
-
-//about routes
-router.get('/about', function(req,res,next) {
-  queries.getAbout()
-  .then((aboutData) => {
-    res.json(aboutData)
-  })
-})
-router.post('/about', function(req,res,next) {
-  queries.addAbout(req.body)
-  .then((aboutData) => {
-    res.redirect('/about')
-  })
-})
-router.put('/about/:id', function(req,res,next) {
-  var id = req.params.id
-  queries.updateAbout(id, req.body)
-  .then((aboutData) => {
-    res.redirect('/about')
   })
 })
 
